@@ -1,0 +1,16 @@
+name: "Test My Action"
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run My Action
+        uses: ./ # Use local action
+        with:
+          name: "Pritam"
+
+      - name: Print Greeting
+        run: echo "Greeting output is ${{ steps.run-action.outputs.greeting }}"
