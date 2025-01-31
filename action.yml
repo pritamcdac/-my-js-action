@@ -1,16 +1,13 @@
-name: "My JavaScript Action"
-description: "A simple GitHub Action written in JavaScript"
-author: "pritamcdac"
+name: 'My JavaScript Action'
+description: 'An action that greets a user by name'
 inputs:
   name:
-    description: "Name to greet"
+    description: 'Name of the person to greet'
     required: true
 outputs:
   greeting:
-    description: "The greeting message"
+    description: 'The greeting message'
+
 runs:
   using: "node16"
-  main: "dist/index.js"
-branding:
-  icon: "check"
-  color: "blue"
+  main: "dist/index.js"  # Make sure this points to the built file
