@@ -1,0 +1,16 @@
+name: "My JavaScript Action"
+description: "A simple GitHub Action written in JavaScript"
+author: "pritamcdac"
+inputs:
+  name:
+    description: "Name to greet"
+    required: true
+outputs:
+  greeting:
+    description: "The greeting message"
+runs:
+  using: "node16"
+  main: "dist/index.js"
+branding:
+  icon: "check"
+  color: "blue"
