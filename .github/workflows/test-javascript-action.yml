@@ -1,0 +1,34 @@
+name: "Test My JavaScript Action"
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Build Action
+        run: |
+          npm run build  # Builds your action
+
+      - name: Run My JavaScript Action
+        uses: ./  # Using the local action in this repository
+        with:
+          name: "Pritam"
+
+      - name: Print Greeting
+        run: echo "Greeting output is ${{ steps.run-action.outputs.greeting }}"

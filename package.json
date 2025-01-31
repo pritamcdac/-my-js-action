@@ -1,12 +1,18 @@
 {
   "name": "-my-js-action",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A simple JavaScript action",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "npx ncc build src/index.js -o dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "dependencies": {},
+  "devDependencies": {
+    "@vercel/ncc": "^0.31.0"
+  },
   "author": "",
+<<<<<<< HEAD
   "license": "ISC",
   "description": "",
   "dependencies": {
@@ -15,4 +21,7 @@
   "devDependencies": {
     "@vercel/ncc": "^0.38.3"
   }
+=======
+  "license": "MIT"
+>>>>>>> b9f5e502fb4e4cdb0a1a55a8134252683a3ce002
 }
